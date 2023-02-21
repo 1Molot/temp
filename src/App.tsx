@@ -23,10 +23,6 @@ function Rating() {
   return (
     <div>
       <div>star</div>
-      <div>star</div>
-      <div>star</div>
-      <div>star</div>
-      <div>star</div>
     </div>
   )
 }
