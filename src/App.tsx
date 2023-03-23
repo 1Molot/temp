@@ -6,6 +6,7 @@ import Rating, {RatingValueType} from './components/Rating/Rating';
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 // import OnOff from './components/OnOff/OnOff'
 
 // function sum(a: number, b: number) {
@@ -19,17 +20,27 @@ function App(props: any) {
     console.log("App rendering")
 
     let [ratingValue,setRatingValue] = useState<RatingValueType>(4);
-    let [accordionCollapsed,setAccordionCollapsed] = useState<boolean>(true);
+    let [accordionCollapsed,setAccordionCollapsed] = useState<boolean>(false);
+    let [switchOn,setSwitchOn] = useState<boolean>(false);
 
     return (
         <div>
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
+
+            <OnOff on={switchOn} onChange={setSwitchOn}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+
+
             {/*<OnOff/>*/}
-            {/*<UncontrolledAccordion titleValue={"Menu"} />*/}
+            <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledRating />
 
-            <Accordion titleValue={"Users"} collapsed={accordionCollapsed}/>
+            <Accordion titleValue={"Menu"}
+                       collapsed={accordionCollapsed}
+                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+
+            {/*<Accordion titleValue={"Users"} collapsed={accordionCollapsed}/>*/}
             {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
             {/*<OnOff on={false}/>*/}
             {/*<OnOff on={true}/>*/}
