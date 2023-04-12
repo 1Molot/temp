@@ -10,7 +10,8 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Button>;
+}
+//satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
