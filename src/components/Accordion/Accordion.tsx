@@ -39,13 +39,14 @@ export function AccordionBody() {
     console.log("AccordionBody rendering")
     return (
         <ul>
-            {/*    {props.items.map((i,index)=> <li onClick={()=> {props.onClick(i.value)}} key={index}>{i.title}</li> )}*/}
-            {/*</li>*/}
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <li>
+                {props.items.map((i,index)=> <li onClick={()=> {props.onClick(i.value)}} key={index}>{i.title}</li> )}
+            </li>
+            {/*<li>1</li>*/}
+            {/*<li>2</li>*/}
+            {/*<li>3</li>*/}
         </ul>
-
+    )
 }
 
 // export default Accordion;

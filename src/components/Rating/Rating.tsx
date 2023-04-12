@@ -27,7 +27,7 @@ type StarPropsType = {
     onClick: (value: RatingValueType) => void
 }
 
-function Star(props: StarPropsType) {
+export function Star(props: StarPropsType) {
     console.log("Star rendering")
 
     return (
@@ -37,4 +37,4 @@ function Star(props: StarPropsType) {
     )
 }
 
-export default Rating;
+// export default Rating;

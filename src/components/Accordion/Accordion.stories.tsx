@@ -10,7 +10,7 @@ export default {
 const callback = action("accordion mode change event fired");
 
 export const MenuCollapsedMode = () => <Accordion titleValue={"Menu"} collapsed={true} onChange={callback}/>
-export const UsersUncollapsedMode = () => <Accordion titleValue={"Users"} collapsed={false} onChange={callback}/>
+export const UsersUncollapsedMode = () => <Accordion titleValue={"Users"} collapsed={false} onChange={callback} />
 
 
 export const ModeChanging = () => {

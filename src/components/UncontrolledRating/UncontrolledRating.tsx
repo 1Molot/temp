@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
+
 type RatingPropsType = {
-    // value: 0 | 1 | 2 | 3 | 4 | 5
+    defaultValue?: RatingValueType
+    onChange: (value : RatingValueType) => void
 }
 
 export function UncontrolledRating(props: RatingPropsType) {
     console.log("Rating rendering")
 
-    let [value, setValue] = useState(0);
+    let [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0);
 
     return (
         <div>
@@ -26,7 +29,7 @@ type StarPropsType = {
     setValue: () => void
 }
 
-function Star(props: StarPropsType) {
+export function Star(props: StarPropsType) {
     console.log("Star rendering")
     return (
         <span onClick={() => { props.setValue() } }>
@@ -34,5 +37,5 @@ function Star(props: StarPropsType) {
 </span>
     )
 }
-
-export default UncontrolledRating;
+//
+// export default UncontrolledRating;
