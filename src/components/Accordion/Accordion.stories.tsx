@@ -8,11 +8,6 @@ const GetCategoryObj = (categoryName: 'Color' | 'Event' | 'Main') => ({
         category: 'categoryName'
     }
 })
-// const ColorsCategory = {
-//     table: {
-//         category: 'Colors'
-//     }
-// }
 
 export default {
     title: 'components/Accordion',
