@@ -69,7 +69,7 @@ export const HelpsToReactMemo = () => {
     }, [users])
 
     const addUser = () => {
-        const newUsers = [...users, 'Sveta' + new Data().getTime()];
+        const newUsers = [...users, 'Sveta' + new Date().getTime()];
         setUsers(newUsers);
     }
 
@@ -101,14 +101,14 @@ export const LikeUseCallback = () => {
     const memoizedAddBook = useMemo(() => {
         return () => {
             console.log(books)
-            const newUsers = [...books, 'Angular' + new Data().getTime()];
+            const newUsers = [...books, 'Angular' + new Date().getTime()];
             setBooks(newUsers);
         }
     }, [books]);
 
     const memoizedAddBook2 = useCallback(() => {
         console.log(books)
-        const newUsers = [...books, 'Angular' + new Data().getTime()];
+        const newUsers = [...books, 'Angular' + new Date().getTime()];
         setBooks(newUsers);
     }, [books]);
 
