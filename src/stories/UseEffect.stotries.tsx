@@ -1,7 +1,7 @@
 import React, {useMemo, useState, useEffect} from "react";
 
 export default {
-    title: 'hooks demo/useEffect demo',
+    title: 'useEffect demo',  //hooks demo/
 }
 
 export const SimpleExample = () => {
@@ -13,17 +13,19 @@ export const SimpleExample = () => {
     useEffect(() => {
         console.log('useEffect every render')
         document.title = counter.toString()
-    })
+    }) //перезапускается всегда(зарегистрированный эффект(useEffect) после отрисовки JSX)
+
     useEffect(() => {
         console.log('useEffect only first render (componentDidMount)')
         document.title = counter.toString()
-    }, [])
+    }, []) // срабатывает один раз
+
     useEffect(() => {
         console.log('useEffect first render and every counter change')
         document.title = counter.toString()
-    }, [counter])
+    }, [counter]) // срабатывает один раз // при изменении counter
 
-    return (
+    return (                                                // JSX
         <>
             Hello, {counter} {fake}
             <button onClick={() => setFake(fake + 1)}>fake+</button>
